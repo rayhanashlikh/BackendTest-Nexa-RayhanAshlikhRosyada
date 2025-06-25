@@ -47,10 +47,10 @@ const loginAdmin = async (req, res) => {
     // console.log("New token created:", test);
     // throw new Error("New token created: " + JSON.stringify(test));
     // Tambahkan +7 jam untuk expired_at
-    const expiredAtWIB = dayjs(expired_at).tz('Asia/Jakarta').format('YYYY-MM-DD HH:mm:ss');
+    const expiredAtWib = dayjs(expired_at).tz('Asia/Jakarta').format('YYYY-MM-DD HH:mm:ss');
 
     return res.json({
-      data: { token, expiredAtWIB },
+      data: { token, expired_at: expiredAtWib },
       status: 200, success: true, message: "Login successful"
     });
   } catch (e) {
