@@ -1,0 +1,11 @@
+services:
+  app:
+    build: .
+    container_name: backend_test_rayhan
+    ports:
+      - "3000:3000"
+    env_file: .env
+    volumes:
+      - .:/usr/src/app   # Ganti /app jadi /usr/src/app
+    restart: always
+    command: npm run start-dev
