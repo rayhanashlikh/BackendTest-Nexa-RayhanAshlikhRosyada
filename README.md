@@ -1,66 +1,78 @@
-# BackendTest Nexa - Rayhan Ashlikh Rosyada
+# 🚧 BackendTest Nexa - Rayhan Ashlikh Rosyada
 
-## 🧾 Deskripsi
-Project ini merupakan API Backend untuk pengelolaan karyawan dan otentikasi berbasis JWT, dibangun dengan arsitektur modular dan sudah menggunakan Docker untuk kemudahan deployment.
-
----
-
-## ⚙️ Teknologi
-
-- Node.js dan Express.js  
-- MySQL dan Sequelize 
-- JWT (JSON Web Token) authentication
-- Docker + Alpine base image  
-- Stored Procedure + View data karyawan
+API Backend ini dirancang untuk manajemen data karyawan dan otentikasi pengguna menggunakan JWT. Proyek dikembangkan menggunakan Node.js dan Express.js dengan koneksi ke database MySQL menggunakan Sequelize ORM. Seluruh layanan dikemas dalam Docker untuk kemudahan setup dan deployment.
 
 ---
 
-## 🚀 Jalankan Project
+## 🔧 Stack Teknologi
 
-1. Clone repository:
-    ```bash
-    git clone https://github.com/youruser/backendtest-nexa.git
-    cd backendtest-nexa
-    ```
-
-2. Duplikat file `.env.example` menjadi `.env` dan sesuaikan isinya jika perlu.
-
-3. Jalankan menggunakan Docker Compose:
-    ```bash
-    docker-compose up --build
-    ```
+- **Node.js** & **Express.js**
+- **MySQL** dengan **Sequelize ORM**
+- **JWT (JSON Web Token)** untuk otentikasi
+- **Docker** dengan base image **Alpine**
+- **Stored Procedure** dan **View** untuk pengelolaan data
 
 ---
 
-## 📁 Struktur Direktori
+## ▶️ Cara Menjalankan
 
-```
-  ├── src/
-  │ ├── config/
-  │ ├── controllers/
-  │ ├── middlewares/
-  │ ├── models/
-  │ ├── routes/
-  │ ├── utils/
-  │ ├── app.js
-  │ └── server.js
-  ├── .dockerignore
-  ├── .env
-  ├── .env.example
-  ├── .gitignore
-  ├── Dockerfile
-  ├── docker-compose.yml
-  ├── package.json
-  ├── package-lock.json
-  └── README.md
+### 1. Clone Repository
+
+```bash
+git clone https://github.com/youruser/backendtest-nexa.git
+cd backendtest-nexa
 ```
 
+### 2. Buat File `.env`
+
+Salin `.env.example` menjadi `.env`:
+
+```bash
+cp .env.example .env
+```
+
+Lalu sesuaikan konfigurasi seperti `DB_HOST`, `DB_USER`, `DB_PASSWORD`, dan `JWT_SECRET`.
+
+### 3. Jalankan via Docker Compose
+
+```bash
+docker-compose up --build
+```
+
+Docker akan otomatis membangun image dan menjalankan kontainer pada port yang ditentukan.
+
 ---
 
-## 🧬 Note Penting
+## 📂 Struktur Proyek
 
-- Variabel `JWT_SECRET`, serta detail koneksi database bisa dikonfigurasi melalui file `.env` atau langsung di `docker-compose.yml`.
+```
+backendtest-nexa/
+├── src/
+│   ├── config/          # Konfigurasi database, dsb.
+│   ├── controllers/     # Logika endpoint API
+│   ├── middlewares/     # Middleware seperti autentikasi
+│   ├── models/          # Definisi model Sequelize
+│   ├── routes/          # Routing Express
+│   ├── utils/           # Helper functions
+│   ├── app.js           # Inisialisasi aplikasi
+│   └── server.js        # HTTP server entry point
+├── .env
+├── .env.example
+├── Dockerfile
+├── docker-compose.yml
+├── package.json
+├── package-lock.json
+└── README.md
+```
 
 ---
 
-Happy Coding! 🚀
+## ⚠️ Catatan Penting
+
+- Pastikan database beserta seluruh **stored procedure** dan **view** telah tersedia sebelum menjalankan aplikasi.
+- Konfigurasi rahasia seperti `JWT_SECRET` wajib diatur di `.env` untuk keamanan aplikasi.
+
+---
+
+Terima kasih telah menggunakan proyek ini 🙌  
+Selamat ngoding! 🧠✨
